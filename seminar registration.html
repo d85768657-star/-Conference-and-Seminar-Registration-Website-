@@ -1,0 +1,734 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Innovate 2026 | Conference & Seminar</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f5f7ff;
+    color: #202744;
+    line-height: 1.6;
+}
+
+header {
+    background: #111936;
+    color: white;
+    padding: 18px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.logo {
+    font-size: 25px;
+    font-weight: bold;
+    color: #65e6d1;
+}
+
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+nav a:hover {
+    color: #65e6d1;
+}
+
+.hero {
+    min-height: 460px;
+    padding: 80px 7%;
+    display: flex;
+    align-items: center;
+    color: white;
+    background:
+      linear-gradient(100deg, #111936 15%, #283d79 70%, #4962a2);
+}
+
+.hero-content {
+    max-width: 750px;
+}
+
+.tag {
+    display: inline-block;
+    background: #65e6d1;
+    color: #111936;
+    padding: 7px 16px;
+    border-radius: 30px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.hero h1 {
+    font-size: clamp(36px, 6vw, 62px);
+    line-height: 1.15;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 18px;
+    margin-bottom: 25px;
+}
+
+.button {
+    display: inline-block;
+    background: #65e6d1;
+    color: #111936;
+    padding: 12px 23px;
+    text-decoration: none;
+    border: none;
+    border-radius: 7px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.button:hover {
+    background: #42cbb6;
+}
+
+section {
+    padding: 65px 7%;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.section-title h2 {
+    font-size: 32px;
+    color: #18254d;
+}
+
+.section-title p {
+    color: #68708a;
+    margin-top: 8px;
+}
+
+.info-grid, .theme-grid, .speaker-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 22px;
+}
+
+.info-card, .theme-card, .speaker-card {
+    background: white;
+    padding: 25px;
+    border-radius: 14px;
+    box-shadow: 0 5px 22px #20274412;
+    transition: transform 0.25s;
+}
+
+.info-card:hover, .theme-card:hover, .speaker-card:hover {
+    transform: translateY(-5px);
+}
+
+.info-card {
+    text-align: center;
+}
+
+.info-card .emoji, .theme-card .emoji {
+    font-size: 35px;
+}
+
+.info-card h3, .theme-card h3 {
+    margin: 12px 0;
+    color: #283d79;
+}
+
+#themes {
+    background: white;
+}
+
+.theme-card {
+    border-top: 4px solid #65e6d1;
+}
+
+.speaker-card {
+    text-align: center;
+    padding-top: 30px;
+}
+
+.speaker-avatar {
+    width: 90px;
+    height: 90px;
+    margin: 0 auto 15px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #283d79, #65e6d1);
+    color: white;
+    display: grid;
+    place-items: center;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.speaker-card h3 {
+    color: #18254d;
+}
+
+.speaker-card .role {
+    color: #5267a7;
+    font-size: 14px;
+    margin: 5px 0 12px;
+    font-weight: bold;
+}
+
+#agenda {
+    background: #eaf0ff;
+}
+
+.agenda {
+    max-width: 850px;
+    margin: auto;
+}
+
+.agenda-item {
+    display: grid;
+    grid-template-columns: 135px 1fr;
+    gap: 20px;
+    padding: 22px;
+    background: white;
+    border-radius: 10px;
+    margin-bottom: 14px;
+    border-left: 5px solid #5267a7;
+}
+
+.agenda-time {
+    color: #354c96;
+    font-weight: bold;
+}
+
+.agenda-item h3 {
+    margin-bottom: 5px;
+}
+
+.venue-box {
+    max-width: 850px;
+    margin: auto;
+    background: white;
+    padding: 30px;
+    border-radius: 14px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+    box-shadow: 0 5px 22px #20274412;
+}
+
+.venue-box h3 {
+    color: #283d79;
+    margin-bottom: 10px;
+}
+
+.guidelines {
+    max-width: 850px;
+    margin: auto;
+    background: white;
+    border-radius: 14px;
+    padding: 30px;
+}
+
+.guidelines li {
+    margin: 12px 0 12px 20px;
+}
+
+#register {
+    background: #111936;
+    color: white;
+}
+
+#register .section-title h2 {
+    color: white;
+}
+
+#register .section-title p {
+    color: #c6cee8;
+}
+
+.registration-form {
+    max-width: 750px;
+    margin: auto;
+    padding: 30px;
+    border-radius: 15px;
+    background: white;
+    color: #202744;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+}
+
+.form-group {
+    margin-bottom: 18px;
+}
+
+.form-group.full {
+    grid-column: 1 / -1;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 7px;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #d3d9e8;
+    border-radius: 7px;
+    font-size: 15px;
+    font-family: inherit;
+}
+
+input:focus, select:focus, textarea:focus {
+    outline: 2px solid #65e6d1;
+    border-color: #65e6d1;
+}
+
+.checkbox-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin: 5px 0 20px;
+}
+
+.checkbox-row input {
+    width: auto;
+    margin-top: 6px;
+}
+
+.checkbox-row label {
+    font-weight: normal;
+}
+
+.registration-form .button {
+    width: 100%;
+    font-size: 16px;
+}
+
+#message {
+    margin-top: 18px;
+    padding: 12px;
+    border-radius: 7px;
+    display: none;
+    background: #dff8ef;
+    color: #155a43;
+}
+
+footer {
+    text-align: center;
+    background: #090f24;
+    color: #d6dcf0;
+    padding: 25px;
+}
+
+footer span {
+    color: #65e6d1;
+}
+
+@media (max-width: 650px) {
+    header {
+        justify-content: center;
+    }
+
+    nav {
+        justify-content: center;
+        gap: 12px;
+    }
+
+    .hero {
+        padding: 60px 6%;
+    }
+
+    section {
+        padding: 45px 6%;
+    }
+
+    .agenda-item {
+        grid-template-columns: 1fr;
+        gap: 5px;
+    }
+
+    .venue-box, .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .form-group.full {
+        grid-column: auto;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">INNOVATE 2026</div>
+    <nav>
+        <a href="#about">About</a>
+        <a href="#themes">Themes</a>
+        <a href="#speakers">Speakers</a>
+        <a href="#agenda">Agenda</a>
+        <a href="#venue">Venue</a>
+        <a href="#register">Register</a>
+    </nav>
+</header>
+
+<main>
+<section class="hero" id="about">
+    <div class="hero-content">
+        <span class="tag">ANNUAL TECHNOLOGY CONFERENCE</span>
+        <h1>Ideas Today.<br>Innovations Tomorrow.</h1>
+        <p>
+            Join students, researchers, educators and technology experts
+            for a day of learning, networking and innovation.
+        </p>
+        <p>📅 15 December 2026 &nbsp; | &nbsp; 📍 NRI University</p>
+        <a href="#register" class="button">Register Now →</a>
+    </div>
+</section>
+
+<section>
+    <div class="info-grid">
+        <div class="info-card">
+            <div class="emoji">📅</div>
+            <h3>Event Date</h3>
+            <p>15 December 2026</p>
+        </div>
+        <div class="info-card">
+            <div class="emoji">⏰</div>
+            <h3>Event Time</h3>
+            <p>9:00 AM – 5:00 PM</p>
+        </div>
+        <div class="info-card">
+            <div class="emoji">🎓</div>
+            <h3>Who Can Attend?</h3>
+            <p>Students, faculty and researchers</p>
+        </div>
+        <div class="info-card">
+            <div class="emoji">🤝</div>
+            <h3>Networking</h3>
+            <p>Meet people and share ideas</p>
+        </div>
+    </div>
+</section>
+
+<section id="themes">
+    <div class="section-title">
+        <h2>Conference Themes</h2>
+        <p>Explore the technologies shaping our future.</p>
+    </div>
+
+    <div class="theme-grid">
+        <div class="theme-card">
+            <div class="emoji">🤖</div>
+            <h3>Artificial Intelligence</h3>
+            <p>Discover AI applications, intelligent systems and responsible AI.</p>
+        </div>
+        <div class="theme-card">
+            <div class="emoji">📊</div>
+            <h3>Data Science</h3>
+            <p>Learn how data analysis helps solve real-world problems.</p>
+        </div>
+        <div class="theme-card">
+            <div class="emoji">🔐</div>
+            <h3>Cybersecurity</h3>
+            <p>Understand digital safety, privacy and security challenges.</p>
+        </div>
+        <div class="theme-card">
+            <div class="emoji">🌱</div>
+            <h3>Green Technology</h3>
+            <p>Explore sustainable technology and smart solutions.</p>
+        </div>
+    </div>
+</section>
+
+<section id="speakers">
+    <div class="section-title">
+        <h2>Keynote Speakers</h2>
+        <p>Meet our featured speakers and their areas of expertise.</p>
+    </div>
+
+    <div class="speaker-grid">
+        <article class="speaker-card">
+            <div class="speaker-avatar">AS</div>
+            <h3>Dr. Ananya Sharma</h3>
+            <p class="role">Artificial Intelligence</p>
+            <p>Discusses the future of AI and its impact on education.</p>
+        </article>
+
+        <article class="speaker-card">
+            <div class="speaker-avatar">RK</div>
+            <h3>Prof. Rahul Kumar</h3>
+            <p class="role">Data Science</p>
+            <p>Explains data-driven innovation and practical applications.</p>
+        </article>
+
+        <article class="speaker-card">
+            <div class="speaker-avatar">PM</div>
+            <h3>Dr. Priya Mehta</h3>
+            <p class="role">Cybersecurity</p>
+            <p>Shares knowledge about digital security and online privacy.</p>
+        </article>
+    </div>
+    <p style="text-align:center;margin-top:20px;color:#68708a;font-size:13px;">
+        Sample speaker profiles for demonstration. Replace with confirmed speakers.
+    </p>
+</section>
+
+<section id="agenda">
+    <div class="section-title">
+        <h2>Event Schedule</h2>
+        <p>A structured agenda for a productive day.</p>
+    </div>
+
+    <div class="agenda">
+        <div class="agenda-item">
+            <div class="agenda-time">9:00 – 9:30 AM</div>
+            <div>
+                <h3>Registration and Welcome</h3>
+                <p>Participant check-in and welcome refreshments.</p>
+            </div>
+        </div>
+
+        <div class="agenda-item">
+            <div class="agenda-time">9:30 – 10:15 AM</div>
+            <div>
+                <h3>Opening Ceremony</h3>
+                <p>Introduction to the conference and its objectives.</p>
+            </div>
+        </div>
+
+        <div class="agenda-item">
+            <div class="agenda-time">10:15 – 11:15 AM</div>
+            <div>
+                <h3>Keynote: Artificial Intelligence</h3>
+                <p>Exploring AI innovations and future opportunities.</p>
+            </div>
+        </div>
+
+        <div class="agenda-item">
+            <div class="agenda-time">11:15 AM – 12:00 PM</div>
+            <div>
+                <h3>Data Science Seminar</h3>
+                <p>Using data to understand and solve problems.</p>
+            </div>
+        </div>
+
+        <div class="agenda-item">
+            <div class="agenda-time">12:00 – 1:00 PM</div>
+            <div>
+                <h3>Lunch Break</h3>
+                <p>Lunch and networking with fellow participants.</p>
+            </div>
+        </div>
+
+        <div class="agenda-item">
+            <div class="agenda-time">1:00 – 2:15 PM</div>
+            <div>
+                <h3>Cybersecurity Workshop</h3>
+                <p>Learning essential concepts of digital safety.</p>
+            </div>
+        </div>
+
+        <div class="agenda-item">
+            <div class="agenda-time">2:15 – 3:30 PM</div>
+            <div>
+                <h3>Student Innovation Presentations</h3>
+                <p>Present projects, creative ideas and research work.</p>
+            </div>
+        </div>
+
+        <div class="agenda-item">
+            <div class="agenda-time">3:30 – 4:30 PM</div>
+            <div>
+                <h3>Panel Discussion and Q&A</h3>
+                <p>Ask questions and exchange ideas with participants.</p>
+            </div>
+        </div>
+
+        <div class="agenda-item">
+            <div class="agenda-time">4:30 – 5:00 PM</div>
+            <div>
+                <h3>Closing Ceremony</h3>
+                <p>Feedback, acknowledgements and closing remarks.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="venue">
+    <div class="section-title">
+        <h2>Venue Information</h2>
+        <p>Plan your visit and arrive on time.</p>
+    </div>
+
+    <div class="venue-box">
+        <div>
+            <h3>📍 Event Location</h3>
+            <p><strong>NRI University</strong></p>
+            <p>Main Auditorium / Conference Hall</p>
+            <p>Confirm the exact building and address with the organizers.</p>
+        </div>
+        <div>
+            <h3>ℹ️ Important Information</h3>
+            <p>• Arrive at least 30 minutes early.</p>
+            <p>• Bring your college ID card.</p>
+            <p>• Follow campus directions and event staff instructions.</p>
+            <p>• Contact the organizing team for accessibility needs.</p>
+        </div>
+    </div>
+</section>
+
+<section id="guidelines">
+    <div class="section-title">
+        <h2>Participation Guidelines</h2>
+        <p>Help us make the event comfortable and successful.</p>
+    </div>
+
+    <div class="guidelines">
+        <ul>
+            <li>Complete the registration form with correct details.</li>
+            <li>Carry a valid college or institutional ID.</li>
+            <li>Arrive on time for registration and sessions.</li>
+            <li>Maintain discipline and respect all speakers and participants.</li>
+            <li>Keep mobile phones silent during presentations.</li>
+            <li>Ask questions during the designated Q&A sessions.</li>
+            <li>Follow photography, recording and venue rules.</li>
+            <li>Contact the organizers if you need assistance.</li>
+        </ul>
+    </div>
+</section>
+
+<section id="register">
+    <div class="section-title">
+        <h2>Register for the Conference</h2>
+        <p>Complete the form below to register your interest.</p>
+    </div>
+
+    <form class="registration-form" id="registrationForm">
+        <div class="form-grid">
+
+            <div class="form-group">
+                <label for="name">Full Name *</label>
+                <input type="text" id="name" name="name"
+                       placeholder="Enter your full name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email Address *</label>
+                <input type="email" id="email" name="email"
+                       placeholder="you@example.com" required>
+            </div>
+
+            <div class="form-group">
+                <label for="institution">College / Institution *</label>
+                <input type="text" id="institution" name="institution"
+                       placeholder="Enter institution name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="category">Participant Category *</label>
+                <select id="category" name="category" required>
+                    <option value="">Select category</option>
+                    <option>Student</option>
+                    <option>Faculty</option>
+                    <option>Researcher</option>
+                    <option>Industry Professional</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone"
+                       placeholder="Enter phone number"
+                       pattern="[0-9+() -]{7,20}">
+            </div>
+
+            <div class="form-group">
+                <label for="session">Preferred Theme *</label>
+                <select id="session" name="session" required>
+                    <option value="">Choose a theme</option>
+                    <option>Artificial Intelligence</option>
+                    <option>Data Science</option>
+                    <option>Cybersecurity</option>
+                    <option>Green Technology</option>
+                    <option>All Sessions</option>
+                </select>
+            </div>
+
+            <div class="form-group full">
+                <label for="reason">Why do you want to attend?</label>
+                <textarea id="reason" name="reason" rows="3"
+                          placeholder="Tell us about your interests..."></textarea>
+            </div>
+        </div>
+
+        <div class="checkbox-row">
+            <input type="checkbox" id="agreement" required>
+            <label for="agreement">
+                I confirm that my details are correct and agree to follow
+                the participation guidelines. *
+            </label>
+        </div>
+
+        <button type="submit" class="button">Submit Registration →</button>
+
+        <div id="message" role="status" aria-live="polite"></div>
+    </form>
+</section>
+</main>
+
+<footer>
+    <p>© 2026 <span>INNOVATE Conference</span> | Learn. Connect. Innovate.</p>
+    <p>Organized for students, researchers and technology enthusiasts.</p>
+</footer>
+
+<script>
+const form = document.getElementById("registrationForm");
+const message = document.getElementById("message");
+
+form.addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    if (!form.checkValidity()) {
+        form.reportValidity();
+        return;
+    }
+
+    const name = document.getElementById("name").value.trim();
+
+    message.style.display = "block";
+    message.textContent =
+        "Thank you, " + name +
+        "! Your demo form was submitted successfully. " +
+        "This website does not store or send registrations to a server.";
+
+    form.reset();
+    message.scrollIntoView({ behavior: "smooth", block: "nearest" });
+});
+</script>
+
+</body>
+</html>
